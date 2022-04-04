@@ -33,6 +33,10 @@ header {
   padding: 0.5rem 1.5rem;
 }
 
+.search:focus {
+  outline: 0;
+}
+
 .movie-container {
   display: flex;
   flex-wrap: wrap;
@@ -50,6 +54,8 @@ header {
 }
 
 .movie img {
+  object-fit: cover;
+  height: 450px;
   max-width: 100%;
 }
 
@@ -84,4 +90,23 @@ header {
 
 .movie:hover .movie-over {
   transform: translateY(0%);
+}
+
+.tag {
+  background-color: #22254b;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tag.green {
+  color: rgb(6, 184, 6);
+}
+
+.tag.orange {
+  color: rgb(226, 151, 10);
+}
+
+.tag.red {
+  color: rgb(233, 8, 8);
 }
