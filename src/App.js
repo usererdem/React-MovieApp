@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import Movie from "./components/Movie";
 
@@ -12,20 +12,22 @@ function App() {
 
   useEffect(() => {
     fetch(FEATURED_API)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      setMovies(data.results);
-    })
-
-  }, [])
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMovies(data.results);
+      });
+  }, []);
 
   return (
-    <div className="movie-container">
-      {movies.length > 0 && movies.map((movie) => (
-        <Movie key={movie.id} {...movie} />
-      ))}
-    </div>
+    <>
+      <header>
+        <input className="search" type="text" placeholder="Search..."></input>
+      </header>
+      <div className="movie-container">
+        {movies.length > 0 && movies.map((movie) => <Movie key={movie.id} {...movie} />)}
+      </div>
+    </>
   );
 }
 
